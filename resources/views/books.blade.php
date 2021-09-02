@@ -5,7 +5,7 @@
     <!-- Bootstrapの定形コード -->
     <div class="card-body">
         <div class="card-title">
-            本のタイトル
+            本の表題
         </div>
 
         <!-- バリデーションエラーの表示に使用 -->
@@ -13,11 +13,11 @@
         <!-- バリデーションエラーの表示に使用 -->
 
         <!-- 本のタイトル -->
-        <form action="{{ url('books') }}" method="POST" class="form-horizontal">
+        <form enctype="multipart/form-data" action="{{ url('books') }}" method="POST" class="form-horizontal">
             @csrf
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="book" class="col-sm3 control-label">Book</label>
+                    <label for="book" class="col-sm-3 control-label">Book</label>
                     <input type="text" name="item_name" class="form-control">
                 </div>
 
@@ -37,8 +37,11 @@
                 </div>
             </div>
 
-
-
+            <!-- file追加 -->
+            <div class="col-sm-6">
+                <label>画像</label>
+                <input type="file" name="item_img">
+            </div>
 
             <!-- 本 登録ボタン -->
             <div class="form-row">
@@ -74,6 +77,7 @@
                             <!-- 本タイトル -->
                             <td class="table-text">
                                 <div>{{ $book->item_name }}</div>
+                                <div> <img src="upload/{{$book->item_img}}" width="100"></div>
                             </td>
 
                             <!-- 本：更新ボタン -->
