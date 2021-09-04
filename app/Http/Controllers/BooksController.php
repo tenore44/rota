@@ -1,8 +1,7 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
 
-//使うClassを宣言：自分で追加	
+use Illuminate\Http\Request;
 use App\Models\Book;    //Bookモデルを使えるように
 use Validator;   // Validationを使えるように
 use Auth;        //認証モデルを使えるように

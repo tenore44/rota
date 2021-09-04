@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class-"row container">
+<div class="row container">
   <div class="col-md-12">
   @include('common.errors')
   <form action="{{ url('books/update') }}" method="POSt">
