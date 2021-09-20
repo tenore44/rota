@@ -22,10 +22,10 @@ Route::delete('/book/{book}', 'BooksController@destroy');
 Auth::routes();
 Route::get('/home', 'BooksController@index')->name('home');
 
-Route::group(['middleware' => 'auth'], function() {
+//Route::group(['middleware' => 'auth'], function() {
     //welcomeページを表示
-    Route::get('/', function(){
-        return view('welcome');
-    });
-
-});
+//    Route::get('/', function(){
+//        return view('welcome');
+//    });
+//
+//});
